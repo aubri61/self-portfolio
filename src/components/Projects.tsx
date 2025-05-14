@@ -13,11 +13,9 @@ export default function Projects({ params }: { params?: {} }) {
             key={index}
             params={{
               item: item,
-              material: item.materials ? <div>1234</div> : null,
             }}
           />
         ))}
-
       </div>
     </section>
   );

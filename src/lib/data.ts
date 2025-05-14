@@ -187,10 +187,11 @@ export const projectsData: projectInterface[] = [
     materials: true,
     materialType: "video",
     // materialUrl: "https://youtube.com/shorts/jBQ0qWHiudU?si=05-ucOlw6aApz6DK",
-    materialSrc: "/videos/dreamin.mov",
+    // materialSrc: "/videos/dreamin.mov",
     materialRatio: "9/18.5",
     // materialUrl: "https://www.youtube.com/embed/jBQ0qWHiudU?autoplay=1&mute=1&playsinline=1",
-    // materialUrl: "https://www.youtube.com/embed/jBQ0qWHiudU",
+    materialSrc: "https://www.youtube.com/embed/jBQ0qWHiudU",
+    isLandscape:false,
   },
   {
     title: "스터디 매칭 서비스 Cluby",
@@ -220,7 +221,8 @@ export const projectsData: projectInterface[] = [
     date: "2020.10 ~ 2020.12",
     materials: true,
     materialType: "video",
-    materialSrc: "/videos/cluby.mp4",
+    materialSrc: "https://www.youtube.com/embed/3O2NNsjSsw0",
+    // materialSrc: "/videos/cluby.mp4",
     materialRatio: "16/9",
     isLandscape: true,
 

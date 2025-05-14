@@ -1,5 +1,7 @@
 import { projectInterface } from "@/lib/data";
 import VideoDemo from "@/components/VideoDemo";
+import VideoDemoYoutube from "@/components/VideoDemoYouTube";
+
 
 export default function ProjectItem({
   params,
@@ -100,7 +102,9 @@ export default function ProjectItem({
         <div className="w-full">
           <p className="mt-4 font-semibold text-xl text-gray-700">Demo</p>
           {item.materialType === "video" ? (
-            <VideoDemo src={item.materialSrc} aspectRatio={item.materialRatio} isLandscape={item.isLandscape}/>
+            <VideoDemoYoutube src={item.materialSrc} aspectRatio={item.materialRatio} isLandscape={item.isLandscape}/>
+            // <VideoDemo src={item.materialSrc} aspectRatio={item.materialRatio} isLandscape={item.isLandscape}/>
+
           ) : // <VideoDemo url={item.materialUrl} />
           null}
         </div>
