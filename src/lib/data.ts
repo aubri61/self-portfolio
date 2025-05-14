@@ -49,7 +49,7 @@ export interface workExperienceInterface {
   materials?: boolean;
 }
 
-export const workExperiencesData = [
+export const workExperiencesData: workExperienceInterface[] = [
   {
     CorpTitle: "더로벨",
     role: "Full-Stack Developer",
@@ -96,6 +96,7 @@ export const workExperiencesData = [
       "숙소 추천 및 예약 기능을 위한 크롤링",
       "숙소 예약 기능 구현 및 데이터 관리",
       "렌트카 업체 API 연동 및 예약 기능 구현",
+      "지도 기반 일정 관리 기능 구현",
     ],
     stacks: [
       "React",
@@ -144,27 +145,85 @@ export const workExperiencesData = [
   },
 ];
 
-export const projectsData = [
+export interface projectInterface {
+  title: string;
+  description: string;
+  stacks: string[];
+  date: string;
+  did: string[];
+  materials?: boolean;
+  materialType?: string;
+  materialSrc?: string;
+  materialRatio?: string;
+  isLandscape?:boolean;
+}
+export const projectsData: projectInterface[] = [
   {
-    title: "CorpComment",
+    title: "동기부여 알람 앱 DreamIn",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    // imageUrl: corpcommentImg,
+      "1인으로 React Native 앱과 서버를 개발해 앱스토어에 배포했습니다. '말하는대로 이루어진다'라는 믿음을 실현시킬 수 있는 동기부여 앱을 만들고 싶다는 생각에서 출발한 창업 프로젝트입니다.",
+    did: [
+      "디자인, 기획, 개발, 배포까지 1인으로 진행",
+      "Google, Apple, 이메일 로그인 기능 구현",
+      "사용자 사진 업로드 기능 구현",
+      "unsplash API 연동한 사진 검색",
+      "기기 알람 기능 구현",
+      "AWS S3, Cloudfront 활용 사진 업로드 기능 구현",
+    ],
+    stacks: [
+      "TypeScript",
+      "React Native",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "AWS S3",
+      "AWS EC2",
+      "AWS RDS",
+      "AWS Route53",
+      "AWS CloudFront",
+      "Styled-components",
+    ],
+    date: "2023.05 ~ 2023.10",
+    materials: true,
+    materialType: "video",
+    // materialUrl: "https://youtube.com/shorts/jBQ0qWHiudU?si=05-ucOlw6aApz6DK",
+    materialSrc: "/videos/dreamin.mov",
+    materialRatio: "9/18.5",
+    // materialUrl: "https://www.youtube.com/embed/jBQ0qWHiudU?autoplay=1&mute=1&playsinline=1",
+    // materialUrl: "https://www.youtube.com/embed/jBQ0qWHiudU",
   },
   {
-    title: "rmtDev",
+    title: "스터디 매칭 서비스 Cluby",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    // imageUrl: rmtdevImg,
-  },
-  {
-    title: "Word Analytics",
-    description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    // imageUrl: wordanalyticsImg,
+      "1인으로 React Native 앱과 서버를 개발해 앱스토어에 배포했습니다. '말하는대로 이루어진다'라는 믿음을 실현시킬 수 있는 동기부여 앱을 만들고 싶다는 생각에서 출발한 창업 프로젝트입니다.",
+    did: [
+      "디자인, 기획, 개발, 배포까지 1인으로 진행",
+      "Google, Apple, 이메일 로그인 기능 구현",
+      "사용자 사진 업로드 기능 구현",
+      "unsplash API 연동한 사진 검색",
+      "기기 알람 기능 구현",
+      "AWS S3, Cloudfront 활용 사진 업로드 기능 구현",
+    ],
+    stacks: [
+      "TypeScript",
+      "React Native",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "AWS S3",
+      "AWS EC2",
+      "AWS RDS",
+      "AWS Route53",
+      "AWS CloudFront",
+      "Styled-components",
+    ],
+    date: "2020.10 ~ 2020.12",
+    materials: true,
+    materialType: "video",
+    materialSrc: "/videos/cluby.mp4",
+    materialRatio: "16/9",
+    isLandscape: true,
+
   },
 ] as const;
 
