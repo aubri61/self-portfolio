@@ -48,7 +48,13 @@ export default function ExperienceItem({
           </li>
         ))}
       </ul>
-      {item.materials && (params?.material ? params.material : null)}
+      {item.materials &&
+        (params?.material ? (
+          <div className="w-full">
+            <p className="mt-4 font-semibold text-xl text-gray-700">Demo</p>
+              {params.material}
+          </div>
+        ) : null)}
     </div>
   );
 }

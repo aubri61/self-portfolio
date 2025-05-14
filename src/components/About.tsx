@@ -47,7 +47,7 @@ export default function About({ params }: { params?: {} }) {
             </span>
           </p>
         </div>
-        <div className="flex flex-col pl-3 pr-3 break-keep text-gray-700  ">
+        <div className="flex flex-col break-keep text-gray-800  ">
           <p className="mt-4">
             <span className="font-bold">3년 </span>동안{" "}
             <span className="font-bold">웹, 앱, 서버</span>를 개발하며 효율적인
@@ -59,16 +59,17 @@ export default function About({ params }: { params?: {} }) {
         </div>
 
         {/* 버튼들 */}
-        <div className="mt-15 flex justify-center items-center gap-8">
-          <a className="flex items-center justify-center gap-2 text-[1.15rem] bg-black text-gray-100 shadow-xl rounded-3xl px-7 py-2 cursor-pointer hover:scale-105 focus:scale-105 transition-all duration-200"
-          href="https://github.com/aubri61"
-          target="_blank"
+        <div className="mt-15 flex justify-center items-center sm:gap-8 w-full gap-5">
+          <a
+            className="flex items-center justify-center gap-1.5 text-medium sm:text-[1.15rem] bg-black text-gray-100 shadow-xl rounded-3xl px-3 py-2 sm:px-7  cursor-pointer hover:scale-105 focus:scale-105 transition-all duration-200  whitespace-nowrap"
+            href="https://github.com/aubri61"
+            target="_blank"
           >
             <IoLogoGithub />
-            Go to Github
+            <span>Go to Github</span>
           </a>
           <a
-            className="flex items-center justify-center gap-2 text-[1.15rem] bg-white text-gray-800 shadow-xl rounded-3xl px-7 py-2 cursor-pointer hover:scale-105 focus:scale-105 transition-all duration-200"
+            className="flex items-center justify-center gap-1.5 text-[1.15rem] bg-white text-gray-800 shadow-xl rounded-full  px-3 py-2 sm:px-7  cursor-pointer hover:scale-105 focus:scale-105 transition-all duration-200 whitespace-nowrap"
             href="/CV.pdf"
             download
           >
