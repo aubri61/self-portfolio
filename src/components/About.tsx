@@ -31,7 +31,7 @@ export default function About({ params }: { params?: {} }) {
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ type: "spring", duration: 0.3 }}
-        className="mt-6  flex flex-col items-center justify-center text-left sm:text-center text-gray-800 text-xl sm:text-2xl/snug pl-5 pr-5 sm:pl-0 sm:pr-0"
+        className="mt-10  flex flex-col items-center justify-center text-left sm:text-center text-gray-800 text-xl sm:text-2xl/snug pl-5 pr-5 sm:pl-0 sm:pr-0"
       >
         <div className="flex flex-col text-4xl/10 mb-5 ">
           {/* <div className="mt-6 flex flex-col items-start justify-start  text-gray-700 text-xl max-w-lg sm:text-2xl"> */}
@@ -49,7 +49,7 @@ export default function About({ params }: { params?: {} }) {
         </div>
         <div className="flex flex-col pl-3 pr-3 break-keep text-gray-700  ">
           <p className="mt-4">
-            <span className="font-bold">2년 </span>동안{" "}
+            <span className="font-bold">3년 </span>동안{" "}
             <span className="font-bold">웹, 앱, 서버</span>를 개발하며 효율적인
             코드 작성과 재사용성에 대해 고민했습니다.
           </p>
