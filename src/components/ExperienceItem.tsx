@@ -51,7 +51,7 @@ export default function ExperienceItem({
           {CorpTitle}
         </p>
         <p className="text-lg mb-1 text-blue-900">{role}</p>
-        <p className=" text-medium mb-4   text-gray-700 font-light">{date}</p>
+        <p className=" text-base mb-4   text-gray-700 font-light">{date}</p>
 
         <p className="font-semibold text-xl text-gray-700">Description</p>
         <p className=" break-keep mb-2 sm:text-lg text-gray-800">
@@ -63,7 +63,7 @@ export default function ExperienceItem({
           {did.map((val, idx) => (
             <li
               key={idx}
-              className="break-keep mb-1.5 text-medium sm:text-lg text-gray-800"
+              className="break-keep mb-1.5 text-base sm:text-lg text-gray-800"
             >
               <span className="text-blue-600"> • </span>
               {/* {val} */}
@@ -76,7 +76,7 @@ export default function ExperienceItem({
           {stacks.map((val, idx) => (
             <li
               key={idx}
-              className="text-[.95rem] sm:text-medium text-gray-800 px-2  rounded-full "
+              className="text-[.95rem] sm:text-base text-gray-800 px-2  rounded-full "
             >
               {val}
             </li>

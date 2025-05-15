@@ -1,12 +1,3 @@
-import { desc } from "framer-motion/client";
-import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
-// import corpcommentImg from "@/public/corpcomment.png";
-// import rmtdevImg from "@/public/rmtdev.png";
-// import wordanalyticsImg from "@/public/wordanalytics.png";
-
 export const links = [
   {
     name: "About",
@@ -28,10 +19,10 @@ export const links = [
     name: "Skills",
     hash: "#skills",
   },
-  {
-    name: "Contact",
-    hash: "#contact",
-  },
+  // {
+  //   name: "Contact",
+  //   hash: "#contact",
+  // },
 ] as const;
 
 export interface IWorkExperience {
@@ -59,6 +50,7 @@ export const workExperiencesData: IWorkExperience[] = [
       "ISO 국제표준 문서 자동화 AI 서비스 개발",
       "녹내장 및 라섹 환자 시술값 예측 AI 서비스 웹 개발",
       "다양한 middleware를 활용한 리다이렉팅 작업",
+      "RESTful API 작성 및 적용",
     ],
     stacks: [
       "Next.js",
@@ -75,7 +67,8 @@ export const workExperiencesData: IWorkExperience[] = [
       "MongoDB",
       "AWS S3",
       "AWS EC2",
-      "AWS RDS",
+      "RESTful API",
+
       "AWS Route53",
       "Styled-Components",
       "Tailwind",
@@ -96,6 +89,7 @@ export const workExperiencesData: IWorkExperience[] = [
       "숙소 예약 기능 구현 및 데이터 관리",
       "렌트카 업체 API 연동 및 예약 기능 구현",
       "지도 기반 일정 관리 기능 구현",
+      "RESTful API 작성 및 적용",
     ],
     stacks: [
       "React",
@@ -108,7 +102,8 @@ export const workExperiencesData: IWorkExperience[] = [
       "MongoDB",
       "AWS S3",
       "AWS EC2",
-      "AWS RDS",
+      "RESTful API",
+
       "AWS Route53",
       "Javascript",
       "Figma",
@@ -141,7 +136,7 @@ export const workExperiencesData: IWorkExperience[] = [
       "HTML",
       "CSS",
     ],
-    date: "2021.03 - 2021.09",
+    date: "2021.03 ~ 2021.09",
   },
 ] as const;
 
@@ -156,6 +151,7 @@ export interface IProject {
   materialSrc?: string;
   materialRatio?: string;
   isLandscape?: boolean;
+  demoUrl?: string;
 }
 export const projectsData: IProject[] = [
   {
@@ -179,7 +175,8 @@ export const projectsData: IProject[] = [
       "MongoDB",
       "AWS S3",
       "AWS EC2",
-      "AWS RDS",
+      "RESTful API",
+
       "AWS Route53",
       "AWS CloudFront",
       "Styled-Components",
@@ -194,7 +191,24 @@ export const projectsData: IProject[] = [
     // materialUrl: "https://www.youtube.com/embed/jBQ0qWHiudU?autoplay=1&mute=1&playsinline=1",
     materialSrc: "https://www.youtube.com/embed/eCEYWUdpOiU",
     // materialSrc: "https://www.youtube.com/embed/jBQ0qWHiudU",
-    isLandscape: false,
+    isLandscape: true,
+    // isLandscape: false,
+  },
+  {
+    title: "친구 같은 AI 챗봇 Momi",
+    description:
+      "Google AI SDK와 연동하여 간단한 AI 챗봇을 만들었습니다. next-intl 라이브러리를 사용해 다국어 환경을 지원했습니다.",
+    did: [
+      "Google AI SDK 연동 및 api 생성",
+      "next-intl 라이브러리를 사용한 i18n 다국어 지원 기능",
+      "Next.js와 tailwind로 깔끔한 프론트 화면 구성",
+    ],
+    stacks: ["TypeScript", "Nextjs", "Tailwind", "Vercel"],
+    date: "2023.05 ~ 2023.10",
+    materials: true,
+    materialType: "image",
+    materialSrc: "/momi.png",
+    demoUrl: "https://ai-friend-chat.vercel.app/",
   },
   {
     title: "스터디 매칭 서비스 Cluby",
@@ -216,7 +230,7 @@ export const projectsData: IProject[] = [
       "MongoDB",
       "AWS S3",
       "AWS EC2",
-      "AWS RDS",
+
       "AWS Route53",
       "AWS CloudFront",
       "Styled-Components",
@@ -251,7 +265,6 @@ export const projectsData: IProject[] = [
     materials: true,
     materialType: "video",
     materialSrc: "https://www.youtube.com/embed/iHc02hxnq-M",
-    // materialSrc: "/videos/cluby.mp4",
     materialRatio: "16/9",
     isLandscape: true,
   },
@@ -282,7 +295,7 @@ export const skillTagsData = [
   "Flask",
   "AWS S3",
   "AWS EC2",
-  "AWS RDS",
+
   "AWS Route53",
   "AWS CloudFront",
   "Framer Motion",
@@ -292,8 +305,8 @@ export const skillTagsData = [
   "Vercel",
 ] as const;
 
-export const skillsData = [
-  {
-    title: "TypeScript/Javascript",
-  },
-];
+// export const skillsData = [
+//   {
+//     title: "TypeScript/Javascript",
+//   },
+// ];

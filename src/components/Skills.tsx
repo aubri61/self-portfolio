@@ -34,7 +34,7 @@ export default function Skills({ params }: { params?: {} }) {
       >
         <SectionTitle params={{ title: "Skills" }} />
 
-        <ul className="flex flex-wrap justify-center gap-2 text-medium sm:text-[1.1rem] text-gray-800 mt-10">
+        <ul className="flex flex-wrap justify-center gap-2 text-base sm:text-[1.1rem] text-gray-800 mt-10">
           {skillTagsData.map((skill, index) => (
             <motion.li
               className="bg-white borderBlack rounded-lg px-3 py-2 dark:bg-white/10 dark:text-white/80 border-1 border-gray-200"
