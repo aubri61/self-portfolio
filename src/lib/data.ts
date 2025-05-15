@@ -8,13 +8,13 @@ import { LuGraduationCap } from "react-icons/lu";
 // import wordanalyticsImg from "@/public/wordanalytics.png";
 
 export const links = [
-  // {
-  //   name: "Home",
-  //   hash: "#home",
-  // },
   {
     name: "About",
     hash: "#about",
+  },
+  {
+    name: "Education",
+    hash: "#education",
   },
   {
     name: "Experiences",
@@ -29,16 +29,12 @@ export const links = [
     hash: "#skills",
   },
   {
-    name: "Education",
-    hash: "#education",
-  },
-  {
     name: "Contact",
     hash: "#contact",
   },
 ] as const;
 
-export interface workExperienceInterface {
+export interface IWorkExperience {
   CorpTitle: string;
   role: string;
   location: string;
@@ -49,7 +45,7 @@ export interface workExperienceInterface {
   materials?: boolean;
 }
 
-export const workExperiencesData: workExperienceInterface[] = [
+export const workExperiencesData: IWorkExperience[] = [
   {
     CorpTitle: "더로벨",
     role: "Full-Stack Developer",
@@ -62,6 +58,7 @@ export const workExperiencesData: workExperienceInterface[] = [
       "치과 환자 대쉬보드 서비스 개발",
       "ISO 국제표준 문서 자동화 AI 서비스 개발",
       "녹내장 및 라섹 환자 시술값 예측 AI 서비스 웹 개발",
+      "다양한 middleware를 활용한 리다이렉팅 작업",
     ],
     stacks: [
       "Next.js",
@@ -70,16 +67,18 @@ export const workExperiencesData: workExperienceInterface[] = [
       "React Native",
       "Node.js",
       "Express",
-      "fastAPI",
-      "python",
+      "Python",
+      "Docker",
+      "FastAPI",
       "Flask",
+      "Zustand",
       "MongoDB",
       "AWS S3",
       "AWS EC2",
       "AWS RDS",
       "AWS Route53",
-      "Styled-components",
-      "tailwind",
+      "Styled-Components",
+      "Tailwind",
     ],
     date: "2023.01 ~ 2024.11",
   },
@@ -105,13 +104,14 @@ export const workExperiencesData: workExperienceInterface[] = [
       "React Native",
       "Node.js",
       "Express",
-      "Styled-components",
+      "Styled-Components",
       "MongoDB",
       "AWS S3",
       "AWS EC2",
       "AWS RDS",
       "AWS Route53",
-      "javascript",
+      "Javascript",
+      "Figma",
     ],
     date: "2021.09 ~ 2022.04",
     materials: true,
@@ -123,7 +123,7 @@ export const workExperiencesData: workExperienceInterface[] = [
     description:
       "PC 홈페이지 중 낙후되고 사용성이 떨어지는 부분을 직접 디자인하고 기능을 개선했습니다. 이후 React Native 기술을 익혀 모바일 앱 기능 개선을 맡았습니다. 관련 Backend는 Django legacy code를 리뷰해 직접 수정하여 api 등을 만들어 적용했습니다. 사용자에게 노출되는 화면을 개선하여 MAU를 증가시키는 데 크게 기여했습니다. 팀원들과 소통하며 협업하는 방법을 배웠습니다.",
     did: [
-      "PC 홈페이지 의사, 병원 상세 페이지 리메이크",
+      "PC 홈페이지 의사, 병원 상세 페이지 리팩토링",
       "주변 병원 검색 기능 개선",
       "병원 리뷰 업로드 및 보기 기능 개선",
       "앱 메인 페이지 및 배너 개선",
@@ -136,16 +136,16 @@ export const workExperiencesData: workExperienceInterface[] = [
       "React Native",
       "Django",
       "PostgreSQL",
-      "javascript",
+      "Javascript",
       "ajax",
       "HTML",
       "CSS",
     ],
     date: "2021.03 - 2021.09",
   },
-];
+] as const;
 
-export interface projectInterface {
+export interface IProject {
   title: string;
   description: string;
   stacks: string[];
@@ -155,9 +155,9 @@ export interface projectInterface {
   materialType?: string;
   materialSrc?: string;
   materialRatio?: string;
-  isLandscape?:boolean;
+  isLandscape?: boolean;
 }
-export const projectsData: projectInterface[] = [
+export const projectsData: IProject[] = [
   {
     title: "동기부여 알람 앱 DreamIn",
     description:
@@ -169,6 +169,7 @@ export const projectsData: projectInterface[] = [
       "unsplash API 연동한 사진 검색",
       "기기 알람 기능 구현",
       "AWS S3, Cloudfront 활용 사진 업로드 기능 구현",
+      "React Hooks를 활용해 코드 재사용성 높임",
     ],
     stacks: [
       "TypeScript",
@@ -181,7 +182,8 @@ export const projectsData: projectInterface[] = [
       "AWS RDS",
       "AWS Route53",
       "AWS CloudFront",
-      "Styled-components",
+      "Styled-Components",
+      "Figma",
     ],
     date: "2023.05 ~ 2023.10",
     materials: true,
@@ -190,8 +192,9 @@ export const projectsData: projectInterface[] = [
     // materialSrc: "/videos/dreamin.mov",
     materialRatio: "9/18.5",
     // materialUrl: "https://www.youtube.com/embed/jBQ0qWHiudU?autoplay=1&mute=1&playsinline=1",
-    materialSrc: "https://www.youtube.com/embed/jBQ0qWHiudU",
-    isLandscape:false,
+    materialSrc: "https://www.youtube.com/embed/eCEYWUdpOiU",
+    // materialSrc: "https://www.youtube.com/embed/jBQ0qWHiudU",
+    isLandscape: false,
   },
   {
     title: "스터디 매칭 서비스 Cluby",
@@ -216,7 +219,8 @@ export const projectsData: projectInterface[] = [
       "AWS RDS",
       "AWS Route53",
       "AWS CloudFront",
-      "Styled-components",
+      "Styled-Components",
+      "Figma",
     ],
     date: "2020.10 ~ 2020.12",
     materials: true,
@@ -225,28 +229,71 @@ export const projectsData: projectInterface[] = [
     // materialSrc: "/videos/cluby.mp4",
     materialRatio: "16/9",
     isLandscape: true,
+  },
 
+  {
+    title: "AI 법률 도우미 앱 LawBot",
+    description:
+      "소장을 업로드하면 AI로 비슷한 판례를 찾아 제공하는 앱 서비스를 제작했습니다. 한이음 ICT 공모전 장려상을 수상하였습니다.",
+    did: [
+      "OCR 분석 API 연동",
+      "React Native 활용 앱 프론트 개발",
+      "Figma를 활용한 프론트 디자인",
+    ],
+    date: "2019.05 ~ 2019.10",
+    stacks: [
+      "JavaScript",
+      "React Native",
+      "MongoDB",
+      "Styled-Components",
+      "Figma",
+    ],
+    materials: true,
+    materialType: "video",
+    materialSrc: "https://www.youtube.com/embed/iHc02hxnq-M",
+    // materialSrc: "/videos/cluby.mp4",
+    materialRatio: "16/9",
+    isLandscape: true,
   },
 ] as const;
 
-export const skillsData = [
-  "HTML",
-  "CSS",
+export const skillTagsData = [
   "JavaScript",
   "TypeScript",
   "React",
   "Next.js",
   "Node.js",
+  "Express",
+  "React Native",
   "Git",
   "Tailwind",
-  "Prisma",
+  "Styled-Components",
+  "emotion",
   "MongoDB",
   "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
+  "React Hooks",
+  "Recoil",
+  "Zustand",
+  "Docker",
   "PostgreSQL",
   "Python",
   "Django",
+  "FastAPI",
+  "Flask",
+  "AWS S3",
+  "AWS EC2",
+  "AWS RDS",
+  "AWS Route53",
+  "AWS CloudFront",
   "Framer Motion",
+  "HTML",
+  "CSS",
+  "Figma",
+  "Vercel",
 ] as const;
+
+export const skillsData = [
+  {
+    title: "TypeScript/Javascript",
+  },
+];
