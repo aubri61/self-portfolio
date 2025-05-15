@@ -2,7 +2,7 @@ import SectionTitle from "@/components/SectionTitle";
 
 export default function Education({ params }: { params?: {} }) {
   return (
-    <section className="sm:w-[40rem] mt-5 w-full flex flex-col justify-center items-center">
+    <section className="sm:w-[40rem] mt-5 w-full flex flex-col justify-center items-center" id="education">
       <SectionTitle params={{ title: "Education" }} />
       <div className="flex mt-8 flex-col justify-center items-start w-full px-5">
         <p className="text-2xl font-semibold flex items-center">

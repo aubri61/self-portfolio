@@ -6,7 +6,10 @@ import { IoLogoGithub, IoIosDownload } from "react-icons/io";
 
 export default function About({ params }: { params?: {} }) {
   return (
-    <section className=" text-center sm:max-w-[35rem]">
+    <section
+      className=" text-center sm:max-w-[35rem]  scroll-mt-30"
+      id="about"
+    >
       {/* <div className="flex items-center justify-center flex-col"> */}
       {/* 프로필 파트 */}
       <motion.div

@@ -8,13 +8,13 @@ import { LuGraduationCap } from "react-icons/lu";
 // import wordanalyticsImg from "@/public/wordanalytics.png";
 
 export const links = [
-  // {
-  //   name: "Home",
-  //   hash: "#home",
-  // },
   {
     name: "About",
     hash: "#about",
+  },
+  {
+    name: "Education",
+    hash: "#education",
   },
   {
     name: "Experiences",
@@ -27,10 +27,6 @@ export const links = [
   {
     name: "Skills",
     hash: "#skills",
-  },
-  {
-    name: "Education",
-    hash: "#education",
   },
   {
     name: "Contact",

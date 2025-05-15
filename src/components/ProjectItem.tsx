@@ -43,7 +43,7 @@ export default function ProjectItem({
   // };
 
   return (
-    <div className="flex mt-8 mb-15 flex-col justify-center items-start w-full px-5">
+    <article className="flex mt-8 mb-15 flex-col justify-center items-start w-full px-5">
       <p className="text-2xl font-semibold flex items-center">
         <span className=" text-blue-600 font-bold text-4xl mr-2"> • </span>
         {title}
@@ -94,6 +94,6 @@ export default function ProjectItem({
           null}
         </div>
       )}
-    </div>
+    </article>
   );
 }
