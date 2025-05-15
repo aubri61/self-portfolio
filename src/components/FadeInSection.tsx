@@ -1,5 +1,5 @@
 // components/FadeInOnceSection.tsx
-"use client";
+'use client';
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -10,7 +10,7 @@ type Props = {
 };
 
 const FadeInSection = ({ children }: Props) => {
-  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [hasBeenInView, setHasBeenInView] = useState(false);
 
   useEffect(() => {
@@ -21,9 +21,7 @@ const FadeInSection = ({ children }: Props) => {
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
-      animate={
-        hasBeenInView ? { opacity: 1, y: 0, transition: { duration: 0.6 } } : {}
-      }
+      animate={hasBeenInView ? { opacity: 1, y: 0, transition: { duration: 0.6 } } : {}}
     >
       {children}
     </motion.div>
@@ -31,6 +29,7 @@ const FadeInSection = ({ children }: Props) => {
 };
 
 export default FadeInSection;
+
 
 // // components/FadeInSection.tsx
 // "use client";
