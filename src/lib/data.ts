@@ -143,9 +143,9 @@ export const workExperiencesData: IWorkExperience[] = [
     ],
     date: "2021.03 - 2021.09",
   },
-];
+] as const;
 
-export interface projectInterface {
+export interface IProject {
   title: string;
   description: string;
   stacks: string[];
@@ -157,7 +157,7 @@ export interface projectInterface {
   materialRatio?: string;
   isLandscape?: boolean;
 }
-export const projectsData: projectInterface[] = [
+export const projectsData: IProject[] = [
   {
     title: "동기부여 알람 앱 DreamIn",
     description:

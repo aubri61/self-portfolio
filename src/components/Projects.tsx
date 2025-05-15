@@ -1,6 +1,6 @@
 import SectionTitle from "@/components/SectionTitle";
 import ProjectItem from "@/components/ProjectItem";
-import { projectsData, projectInterface } from "@/lib/data";
+import { projectsData, IProject } from "@/lib/data";
 
 export default function Projects({ params }: { params?: {} }) {
   return (
@@ -8,13 +8,8 @@ export default function Projects({ params }: { params?: {} }) {
       <SectionTitle params={{ title: "Projects" }} />
 
       <div className="flex flex-col justify-center items-start w-full ">
-        {projectsData.map((item: projectInterface, index: number) => (
-          <ProjectItem
-            key={index}
-            params={{
-              item: item,
-            }}
-          />
+        {projectsData.map((item: IProject, index: number) => (
+          <ProjectItem key={index} {...item} />
         ))}
       </div>
     </section>
