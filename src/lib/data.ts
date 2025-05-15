@@ -38,7 +38,7 @@ export const links = [
   },
 ] as const;
 
-export interface workExperienceInterface {
+export interface IWorkExperience {
   CorpTitle: string;
   role: string;
   location: string;
@@ -49,7 +49,7 @@ export interface workExperienceInterface {
   materials?: boolean;
 }
 
-export const workExperiencesData: workExperienceInterface[] = [
+export const workExperiencesData: IWorkExperience[] = [
   {
     CorpTitle: "더로벨",
     role: "Full-Stack Developer",
@@ -123,7 +123,7 @@ export const workExperiencesData: workExperienceInterface[] = [
     description:
       "PC 홈페이지 중 낙후되고 사용성이 떨어지는 부분을 직접 디자인하고 기능을 개선했습니다. 이후 React Native 기술을 익혀 모바일 앱 기능 개선을 맡았습니다. 관련 Backend는 Django legacy code를 리뷰해 직접 수정하여 api 등을 만들어 적용했습니다. 사용자에게 노출되는 화면을 개선하여 MAU를 증가시키는 데 크게 기여했습니다. 팀원들과 소통하며 협업하는 방법을 배웠습니다.",
     did: [
-      "PC 홈페이지 의사, 병원 상세 페이지 리메이크",
+      "PC 홈페이지 의사, 병원 상세 페이지 리팩토링",
       "주변 병원 검색 기능 개선",
       "병원 리뷰 업로드 및 보기 기능 개선",
       "앱 메인 페이지 및 배너 개선",
@@ -155,7 +155,7 @@ export interface projectInterface {
   materialType?: string;
   materialSrc?: string;
   materialRatio?: string;
-  isLandscape?:boolean;
+  isLandscape?: boolean;
 }
 export const projectsData: projectInterface[] = [
   {
@@ -191,7 +191,7 @@ export const projectsData: projectInterface[] = [
     materialRatio: "9/18.5",
     // materialUrl: "https://www.youtube.com/embed/jBQ0qWHiudU?autoplay=1&mute=1&playsinline=1",
     materialSrc: "https://www.youtube.com/embed/jBQ0qWHiudU",
-    isLandscape:false,
+    isLandscape: false,
   },
   {
     title: "스터디 매칭 서비스 Cluby",
@@ -225,7 +225,6 @@ export const projectsData: projectInterface[] = [
     // materialSrc: "/videos/cluby.mp4",
     materialRatio: "16/9",
     isLandscape: true,
-
   },
 ] as const;
 
