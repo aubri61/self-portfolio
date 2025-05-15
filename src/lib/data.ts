@@ -204,7 +204,7 @@ export const projectsData: IProject[] = [
       "Next.js와 tailwind로 깔끔한 프론트 화면 구성",
     ],
     stacks: ["TypeScript", "Nextjs", "Tailwind", "Vercel"],
-    date: "2023.05 ~ 2023.10",
+    date: "2025.05",
     materials: true,
     materialType: "image",
     materialSrc: "/momi.png",
