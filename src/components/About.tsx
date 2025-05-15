@@ -3,11 +3,15 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { IoLogoGithub, IoIosDownload } from "react-icons/io";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function About({ params }: { params?: {} }) {
+  const { ref } = useSectionInView("About");
+
   return (
     <section
-      className=" text-center sm:max-w-[35rem]  scroll-mt-30"
+      ref={ref}
+      className=" text-center sm:max-w-[35rem]  scroll-mt-30 mb-10"
       id="about"
     >
       {/* <div className="flex items-center justify-center flex-col"> */}

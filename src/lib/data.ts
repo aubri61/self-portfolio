@@ -186,7 +186,8 @@ export const projectsData: IProject[] = [
     // materialSrc: "/videos/dreamin.mov",
     materialRatio: "9/18.5",
     // materialUrl: "https://www.youtube.com/embed/jBQ0qWHiudU?autoplay=1&mute=1&playsinline=1",
-    materialSrc: "https://www.youtube.com/embed/jBQ0qWHiudU",
+    materialSrc: "https://www.youtube.com/embed/eCEYWUdpOiU",
+    // materialSrc: "https://www.youtube.com/embed/jBQ0qWHiudU",
     isLandscape: false,
   },
   {

@@ -6,7 +6,7 @@ import Projects from "@/components/Projects";
 export default function Home() {
   return (
     <main className="flex justify-center items-center flex-col pb-20 ">
-      <div className="max-w-[calc(100dvw-3rem)] sm:max-w-[50rem] w-full flex flex-col items-center justify-center">
+      <div className="max-w-[calc(100dvw-3rem)] sm:max-w-[50rem] w-full flex flex-col items-center justify-center gap-45">
         <About />
         <Education />
         <Experiences />

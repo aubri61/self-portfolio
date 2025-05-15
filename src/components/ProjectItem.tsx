@@ -1,6 +1,9 @@
+"use client";
+
 import { IProject } from "@/lib/data";
-import VideoDemo from "@/components/VideoDemo";
 import VideoDemoYoutube from "@/components/VideoDemoYouTube";
+import { useScroll, motion, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function ProjectItem({
   title,
@@ -14,36 +17,25 @@ export default function ProjectItem({
   materialRatio,
   isLandscape,
 }: IProject) {
-  const highlightText = (text: string, keyword: string) => {
-    const parts = text.split(new RegExp(`(${keyword})`, "gi"));
-    return parts.map((part, idx) =>
-      part.toLowerCase() === keyword.toLowerCase() ? (
-        <span key={idx} className="text-blue-800 font-semibold">
-          {part}
-        </span>
-      ) : (
-        part
-      )
-    );
-  };
+  const ref = useRef<HTMLDivElement>(null);
 
-  // const VideoDemo = ({ url }: { url: string }) => {
-  //   if (!url) return null;
-  //   return (
-  //     <div className="aspect-[9/16] w-full mt-2">
-  //       <iframe
-  //         src={url}
-  //         title="Demo video"
-  //         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  //         allowFullScreen
-  //         className="w-full h-full rounded-xl border"
-  //       ></iframe>
-  //     </div>
-  //   );
-  // };
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "0.7 1"],
+  });
+
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 0.8], [0.6, 1]);
 
   return (
-    <article className="flex mt-8 mb-15 flex-col justify-center items-start w-full px-5">
+    <motion.article
+      ref={ref}
+      className="flex mt-8 mb-15 flex-col justify-center items-start w-full px-5"
+      style={{
+        scale: scaleProgress,
+        opacity: opacityProgress,
+      }}
+    >
       <p className="text-2xl font-semibold flex items-center">
         <span className=" text-blue-600 font-bold text-4xl mr-2"> • </span>
         {title}
@@ -61,8 +53,7 @@ export default function ProjectItem({
             className="break-keep mb-1.5 text-medium sm:text-lg text-gray-800"
           >
             <span className="text-blue-600"> • </span>
-            {/* {val} */}
-            {highlightText(val, "i18n")} {/* 원하는 키워드만 색 바꿔줌 */}
+            {val}
           </li>
         ))}
       </ul>
@@ -94,6 +85,6 @@ export default function ProjectItem({
           null}
         </div>
       )}
-    </article>
+    </motion.article>
   );
 }

@@ -1,23 +1,30 @@
+"use client";
+
 import SectionTitle from "@/components/SectionTitle";
 import { workExperiencesData } from "@/lib/data";
 import ExperienceItem from "@/components/ExperienceItem";
 import { IWorkExperience } from "@/lib/data";
-import { useScroll } from "framer-motion";
-// import Image from "next/image";
+import { useSectionInView } from "@/lib/hooks";
+import FadeInSection from "@/components/FadeInSection";
 
 export default function Experiences({ params }: { params?: {} }) {
-  return (
-    <section
-      className="w-full sm:w-[40rem] flex flex-col justify-center scroll-mt-5"
-      id="experiences"
-    >
-      <SectionTitle params={{ title: "Work Experiences" }} />
+  const { ref } = useSectionInView("Experiences");
 
-      <div className="flex flex-col justify-center items-start w-full ">
-        {workExperiencesData.map((item: IWorkExperience, index: number) => (
-          <ExperienceItem key={index} {...item} />
-        ))}
-      </div>
-    </section>
+  return (
+    <FadeInSection>
+      <section
+        ref={ref}
+        className="w-full sm:w-[40rem] flex flex-col justify-center scroll-mt-30"
+        id="experiences"
+      >
+        <SectionTitle params={{ title: "Work Experiences" }} />
+
+        <div className="flex flex-col justify-center items-start w-full ">
+          {workExperiencesData.map((item: IWorkExperience, index: number) => (
+            <ExperienceItem key={index} {...item} />
+          ))}
+        </div>
+      </section>
+    </FadeInSection>
   );
 }
