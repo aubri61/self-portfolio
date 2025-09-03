@@ -152,8 +152,44 @@ export interface IProject {
   materialRatio?: string;
   isLandscape?: boolean;
   demoUrl?: string;
+  sourceCodeUrl?: string;
 }
 export const projectsData: IProject[] = [
+  {
+    title: "Shopify 판매자 및 소비자용 AI 챗봇 앱 & 위젯(익스텐션)",
+    description:
+      "스토어프론트 우측 하단에 AI 챗봇 위젯 임베드, 관리자에게는 실제 재고·세일 데이터를 조회해 AI에게 발주/세일 Q&A를 묻는 페이지를 구현했습니다.",
+
+    did: [
+      "판매자용 Admin 페이지 구현: AI 활용한 재고 관리 및 발주 추천 등 기능, 대쉬보드, 재고 관리 기능 구현",
+      "소비자용 Theme App Extension 구현: 우측 하단 AI 챗봇 UI 렌더",
+      "App Proxy 설계 학습 및 수신 서명검증 실패/세션 누락 등 에러를 JSON으로 표준화",
+      "Admin GraphQL 직접 호출: 재고/세일 요약을 LLM 컨텍스트로 가공하기 위해 GraphQL SQL문으로 직접 데이터 호출",
+      "개인정보·주문번호 등 PII 질문은 가드레일로 차단",
+      "번들링 파이프라인: esbuild로 `src/main.ts -> assets/chatbot.js` 생성",
+    ],
+
+    stacks: [
+      "TypeScript",
+      "React",
+      "Remix",
+      "Shopify CLI",
+      "Theme App Extension",
+      "Liquid",
+      "GraphQL(Admin API)",
+      "Prisma(Session)",
+      "SQLite",
+      "esbuild",
+      "Gemini(API)",
+    ],
+    date: "2025.08 ~ 2025.09",
+    materials: true,
+    materialType: "image",
+    materialSrc: "/shopify.gif",
+    materialRatio: "16/9",
+    isLandscape: true,
+    sourceCodeUrl: "https://github.com/aubri61/shopify-demo",
+  },
   {
     title: "동기부여 알람 앱 DreamIn",
     description:
@@ -192,7 +228,6 @@ export const projectsData: IProject[] = [
     materialSrc: "https://www.youtube.com/embed/eCEYWUdpOiU",
     // materialSrc: "https://www.youtube.com/embed/jBQ0qWHiudU",
     isLandscape: true,
-    // isLandscape: false,
   },
   {
     title: "친구 같은 AI 챗봇 Momi",
