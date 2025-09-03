@@ -17,6 +17,7 @@ export default function ProjectItem({
   materialRatio,
   isLandscape,
   demoUrl,
+  sourceCodeUrl,
 }: IProject) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -74,6 +75,17 @@ export default function ProjectItem({
       {materials && (
         <div className="w-full">
           <p className="mt-4 font-semibold text-xl mb-3 text-gray-700">Demo</p>
+          {sourceCodeUrl && (
+            <div className="flex justify-center items-center">
+              <a
+                href={sourceCodeUrl}
+                target="_blank"
+                className="text-xl font-semibold mb-5 text-blue-500 cursor-pointer text-center underline hover:text-blue-800"
+              >
+                Github SourceCode
+              </a>
+            </div>
+          )}
           {demoUrl && (
             <div className="flex justify-center items-center">
               <a
@@ -98,7 +110,7 @@ export default function ProjectItem({
                 alt="material"
                 width={200}
                 height={200}
-                className="w-[350px] sm:w-[450px] rounded-2xl shadow-lg"
+                className="w-[400px] sm:w-[500px] rounded-2xl shadow-lg"
               />
             </div>
           ) : null}
