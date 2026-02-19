@@ -34,9 +34,71 @@ export interface IWorkExperience {
   date: string;
   did: string[];
   materials?: boolean;
+  materialType?: string;
+  materialSrc?: string | string[];
+  materialRatio?: string;
+  isLandscape?: boolean;
+  demoUrl?: string;
 }
 
 export const workExperiencesData: IWorkExperience[] = [
+  {
+    CorpTitle: "소셜리액트",
+    role: "Full-Stack Developer",
+    location: "Seoul, South Korea",
+    description:
+      "1인 개발자로서 스포츠 코칭 클래스 플랫폼을 기획·설계·개발·운영까지 단독으로 수행했습니다. 웹(Next.js), 서버(NestJS), 모바일(React Native) 기반의 멀티 플랫폼 서비스를 구축하였으며, AWS 인프라 및 CI/CD 환경을 직접 설계·운영했습니다. 기획, UX 설계, DB 모델링, 서버 아키텍처 설계, 배포 자동화, 마케팅 페이지 제작, 스토어 출시 준비까지 End-to-End Product Ownership을 수행했습니다.",
+    did: [
+      "스포츠 코칭/이벤트 매칭 플랫폼을 기획부터 설계, 개발, 배포, 운영까지 End-to-End로 주도",
+      "PNPM 기반 Monorepo 아키텍처 설계 및 워크스페이스 분리를 통해 Web / Server / Mobile 통합 관리",
+      "관리자 페이지 및 데이터 기반 운영을 위한 Admin Dashboard 설계 및 구현",
+      "Next.js · NestJS · PostgreSQL 기반의 확장 가능한 풀스택 아키텍처 설계 및 구현",
+      "도메인 모델링 및 Prisma 스키마 설계를 통해 복잡한 신청/결제/상태 관리 로직 구조화",
+      "AWS(EC2, RDS, S3, CloudFront) 기반 클라우드 인프라 직접 구축 및 운영",
+      "GitHub Actions + Vercel 기반 CI/CD 자동화 환경 설계",
+      "Web / Mobile(React Native) 통합 구조 설계 및 API 추상화",
+      "SEO, 성능 최적화, 배포 전략까지 고려한 실서비스 운영 경험",
+    ],
+    stacks: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "Shadcn UI",
+      "Zustand",
+      "React Native",
+      "NestJS",
+      "Prisma",
+      "PostgreSQL",
+      "Redis",
+      "JWT",
+      "RESTful API",
+      "AWS EC2",
+      "AWS RDS",
+      "AWS S3",
+      "CloudFront",
+      "AWS Route53",
+      "GitHub Actions",
+      "Vercel",
+      "PM2",
+      "Docker",
+    ],
+    date: "2025.10 ~ 2026.02",
+    demoUrl: "https://nadaun.life/",
+    materials: true,
+    materialType: "image",
+    materialSrc: [
+      "/materials/socialiact/1.png",
+      "/materials/socialiact/2.png",
+      "/materials/socialiact/3.png",
+      "/materials/socialiact/4.png",
+      "/materials/socialiact/5.png",
+      "/materials/socialiact/6.png",
+      "/materials/socialiact/7.png",
+    ],
+    // materialRatio: "16/9",
+    // isLandscape: true,
+  },
   {
     CorpTitle: "더로벨",
     role: "Full-Stack Developer",
