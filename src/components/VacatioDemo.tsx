@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import Image from "next/image";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-export default function VacatioDemo({ params }: { params?: {} }) {
+export default function VacatioDemo() {
   return (
     <div className="flex items-center justify-center w-full relative">
       <button className="swiper-prev absolute -left-4 sm:left-5 top-1/2 z-10 -translate-y-1/2 text-4xl text-blue-300 ">

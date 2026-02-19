@@ -14,13 +14,11 @@ const VideoDemo = ({
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (!videoRef.current) return;
+    const video = videoRef.current;
+    if (!video) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const video = videoRef.current;
-        if (!video) return;
-
         if (entry.isIntersecting) {
           video.play().catch((err) => {
             console.warn("Autoplay error:", err);
@@ -32,10 +30,10 @@ const VideoDemo = ({
       { threshold: 0.5 } // 화면에 50% 이상 들어오면 재생
     );
 
-    observer.observe(videoRef.current);
+    observer.observe(video);
 
     return () => {
-      if (videoRef.current) observer.unobserve(videoRef.current);
+      observer.unobserve(video);
     };
   }, []);
 

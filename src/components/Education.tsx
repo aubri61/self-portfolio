@@ -4,7 +4,7 @@ import SectionTitle from "@/components/SectionTitle";
 import { useSectionInView } from "@/lib/hooks";
 import FadeInSection from "@/components/FadeInSection";
 
-export default function Education({ params }: { params?: {} }) {
+export default function Education() {
   const { ref } = useSectionInView("Education");
 
   return (

@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { IoLogoGithub, IoIosDownload } from "react-icons/io";
+import { IoLogoGithub } from "react-icons/io";
 import { useSectionInView } from "@/lib/hooks";
 
-export default function About({ params }: { params?: {} }) {
+export default function About() {
   const { ref } = useSectionInView("About");
 
   return (
