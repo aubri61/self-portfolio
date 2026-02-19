@@ -108,9 +108,9 @@ export default function ProjectItem({
               <Image
                 src={materialSrc}
                 alt="material"
-                width={200}
-                height={200}
-                className="w-[400px] sm:w-[500px] rounded-2xl shadow-lg"
+                width={800}
+                height={600}
+                className="object-contain w-full max-w-[500px] h-auto max-h-[600px] rounded-2xl shadow-lg"
               />
             </div>
           ) : null}
