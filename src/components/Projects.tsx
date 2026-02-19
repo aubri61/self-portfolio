@@ -5,7 +5,7 @@ import { projectsData, IProject } from "@/lib/data";
 import FadeInSection from "@/components/FadeInSection";
 import { useSectionInView } from "@/lib/hooks";
 
-export default function Projects({ params }: { params?: {} }) {
+export default function Projects() {
   const { ref } = useSectionInView("Projects");
 
   return (

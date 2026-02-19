@@ -14,13 +14,11 @@ const VideoDemoYoutube = ({
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
-    if (!iframeRef.current) return;
+    const iframe = iframeRef.current;
+    if (!iframe) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const iframe = iframeRef.current;
-        if (!iframe) return;
-
         const src = iframe.dataset.src;
         if (entry.isIntersecting && src) {
           iframe.src = src; // lazy load: 실제로 iframe 로드
@@ -29,10 +27,10 @@ const VideoDemoYoutube = ({
       { threshold: 0.5 }
     );
 
-    observer.observe(iframeRef.current);
+    observer.observe(iframe);
 
     return () => {
-      if (iframeRef.current) observer.unobserve(iframeRef.current);
+      observer.unobserve(iframe);
     };
   }, []);
 

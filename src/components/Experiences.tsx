@@ -7,7 +7,7 @@ import { IWorkExperience } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import FadeInSection from "@/components/FadeInSection";
 
-export default function Experiences({ params }: { params?: {} }) {
+export default function Experiences() {
   const { ref } = useSectionInView("Experiences");
 
   return (

@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { IoLogoGithub, IoIosDownload } from "react-icons/io";
+import { IoLogoGithub } from "react-icons/io";
 import { useSectionInView } from "@/lib/hooks";
 
-export default function About({ params }: { params?: {} }) {
+export default function About() {
   const { ref } = useSectionInView("About");
 
   return (
@@ -59,8 +59,9 @@ export default function About({ params }: { params?: {} }) {
             <span className="font-bold">3년 </span>동안 멈추지 않고 새로운
             기술과 도메인에 도전해왔습니다.
           </p>
+          <p className="mt-2 mb-2 font-semibold">기획부터 디자인, 개발, 운영까지.</p>
           <p className="mt-1">
-            주도적으로 문제를 파악하고 집요하게 파고들어 해결하는 걸 즐깁니다.
+            주도적으로 문제를 파악하고 집요하게 파고들어 해결합니다.
           </p>
         </div>
 

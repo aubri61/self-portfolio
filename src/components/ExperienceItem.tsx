@@ -1,9 +1,16 @@
 "use client";
 
 import { IWorkExperience } from "@/lib/data";
-import VacatioDemo from "@/components/VacatioDemo";
+import VideoDemoYoutube from "@/components/VideoDemoYouTube";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
 import { useScroll, motion, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 export default function ExperienceItem({
   CorpTitle,
@@ -13,6 +20,11 @@ export default function ExperienceItem({
   date,
   did,
   materials,
+  materialType,
+  materialSrc,
+  materialRatio,
+  isLandscape,
+  demoUrl,
 }: IWorkExperience) {
   // if (!item) return null;
   const highlightText = (text: string, keyword: string) => {
@@ -36,6 +48,12 @@ export default function ExperienceItem({
 
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgress = useTransform(scrollYProgress, [0, 0.8], [0.6, 1]);
+  
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <motion.div
@@ -85,8 +103,94 @@ export default function ExperienceItem({
 
         {materials && (
           <div className="w-full">
-            <p className="mt-4 font-semibold text-xl text-gray-700">Demo</p>
-            <VacatioDemo />
+            <p className="mt-4 font-semibold text-xl mb-3 text-gray-700">Demo</p>
+            {demoUrl && (
+              <div className="flex justify-center items-center">
+                <a
+                  href={demoUrl}
+                  target="_blank"
+                  className="text-xl font-semibold mb-5 text-blue-500 cursor-pointer text-center underline hover:text-blue-800"
+                >
+                  Live Demo
+                </a>
+              </div>
+            )}
+            {materialType === "video" ? (
+              <VideoDemoYoutube
+                src={materialSrc as string}
+                aspectRatio={materialRatio}
+                isLandscape={isLandscape}
+              />
+            ) : materialType === "image" && materialSrc ? (
+              Array.isArray(materialSrc) && materialSrc.length > 1 ? (
+                // 여러 장의 이미지 - 슬라이더로 표시 (클라이언트에서만 렌더링)
+                isMounted ? (
+                  <div className="flex items-center justify-center w-full relative">
+                    <button className="swiper-prev absolute -left-4 sm:left-5 top-1/2 z-10 -translate-y-1/2 text-4xl text-blue-300">
+                      <IoIosArrowBack />
+                    </button>
+                    <button className="swiper-next absolute -right-4 sm:right-5 top-1/2 z-10 -translate-y-1/2 text-4xl text-blue-300">
+                      <IoIosArrowForward />
+                    </button>
+                    <div className="w-full max-w-[500px] flex justify-center items-center rounded-2xl">
+                      <Swiper
+                        modules={[Navigation, Autoplay]}
+                        spaceBetween={10}
+                        slidesPerView={1}
+                        loop={true}
+                        navigation={{
+                          nextEl: ".swiper-next",
+                          prevEl: ".swiper-prev",
+                          disabledClass: "swiper-button-disabled",
+                        }}
+                        autoplay={{
+                          delay: 3500,
+                          disableOnInteraction: false,
+                          pauseOnMouseEnter: true,
+                        }}
+                        className="w-full"
+                      >
+                        {materialSrc.map((src, i) => (
+                          <SwiperSlide key={i} className="flex justify-center items-center">
+                            <div className="w-full flex justify-center items-center">
+                              <Image
+                                src={src}
+                                alt={`slide ${i + 1}`}
+                                width={800}
+                                height={600}
+                                className="object-contain w-full h-auto max-h-[600px] rounded-2xl shadow-lg"
+                              />
+                            </div>
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
+                    </div>
+                  </div>
+                ) : (
+                  // SSR 시 첫 번째 이미지만 표시
+                  <div className="flex justify-center items-center flex-col">
+                    <Image
+                      src={materialSrc[0]}
+                      alt="material"
+                      width={800}
+                      height={600}
+                      className="object-contain w-full max-w-[500px] h-auto max-h-[600px] rounded-2xl shadow-lg"
+                    />
+                  </div>
+                )
+              ) : (
+                // 단일 이미지 - 그냥 표시
+                <div className="flex justify-center items-center flex-col">
+                  <Image
+                    src={Array.isArray(materialSrc) ? materialSrc[0] : materialSrc}
+                    alt="material"
+                    width={800}
+                    height={600}
+                    className="object-contain w-full max-w-[500px] h-auto max-h-[600px] rounded-2xl shadow-lg"
+                  />
+                </div>
+              )
+            ) : null}
           </div>
         )}
       </article>
